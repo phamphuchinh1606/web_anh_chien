@@ -6,7 +6,12 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    private function viewHome($viewName,$arrayData = []){
+        $viewName = 'home.'.$viewName;
+        return $this->viewGuest($viewName, $arrayData);
+    }
+
     public function index(){
-        return view('guest.home.home');
+        return $this->viewHome('home');
     }
 }

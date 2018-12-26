@@ -10,4 +10,8 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    protected function viewGuest($viewName,$arrayData = []){
+        return View('guest.'.$viewName, $arrayData);
+    }
 }
